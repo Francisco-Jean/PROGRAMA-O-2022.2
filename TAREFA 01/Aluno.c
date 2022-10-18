@@ -36,8 +36,8 @@ void alu_libera(Aluno **aluno) {
 void alu_acessa(Aluno *aluno, int *matricula, char *nome, char *curso) {
   if (aluno == NULL) {
     *matricula = -1;
-    nome = "NULL";
-    curso = "NULL";
+    nome = NULL;
+    curso = NULL;
   }
   *matricula = aluno->matricula;
   strcpy(nome,aluno->nome);
@@ -69,12 +69,10 @@ int alu_igual(Aluno *aluno1, Aluno *aluno2) {
   
   if (strcmp(aluno1->nome,aluno2->nome) == 0 && aluno1->matricula == aluno2->matricula && strcmp(aluno1->curso,aluno2->curso) == 0)
   {
-    printf("1");
     return 1;
   } else 
     {
       int dif  = strcmp(aluno1->nome,aluno2->nome);
-      printf("--%d e nome1 = %s nome2 = %s--", dif, aluno1->nome, aluno2->nome);
       return 0;
     }
 }
