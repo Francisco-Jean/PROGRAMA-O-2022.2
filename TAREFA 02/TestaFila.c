@@ -294,6 +294,10 @@ float teste_fila_insere_com_dados_invalidos() {
              "inválidos!\n");
       pontuacao = 0.67;
     }
+    else {
+      printf("[Falhou 0.00] - Teste da função fila_insere() com dados "
+           "inválidos!\n");
+    }
   } else {
     printf("[Falhou 0.00] - Teste da função fila_insere() com dados "
            "inválidos!\n");
@@ -587,8 +591,7 @@ float bateria_testes_05() {
   printf("====================================================================="
          "====================\n");
   float pontuacao = 0;
-  pontuacao += teste_fila_insere_com_dados_invalidos() +
-               teste_fila_insere_com_dados_invalidos();
+  pontuacao += teste_fila_insere_com_dados_invalidos();
 
   pontuacao += teste_fila_busca_com_dados_invalidos();
   printf("\nTotal: %f\n", pontuacao);

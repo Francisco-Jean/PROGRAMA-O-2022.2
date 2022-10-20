@@ -56,9 +56,9 @@ int fila_insere(Fila *fila, Aluno *aluno) {
   No *no_aux = fila->primeiro;
   No *anterior = no_aux;
   if(fila->primeiro == NULL){
-    No * novo_no = (No*)malloc(sizeof(No*));
-  novo_no->aluno = aluno;
-  novo_no->proximo = NULL;
+    No * novo_no = (No*)malloc(sizeof(No));
+    novo_no->aluno = aluno;
+    novo_no->proximo = NULL;
     No ** aux = &(fila->primeiro);
     *aux = novo_no;
     return 1;
@@ -71,7 +71,7 @@ int fila_insere(Fila *fila, Aluno *aluno) {
     anterior = no_aux;
     no_aux = no_aux->proximo;
   }
-  No * novo_no = (No*)malloc(sizeof(No*));
+  No * novo_no = (No*)malloc(sizeof(No));
   novo_no->aluno = aluno;
   novo_no->proximo = NULL;
 
